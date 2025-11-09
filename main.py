@@ -1,8 +1,8 @@
 """
 Name: Isaac Jacques
-Date: 11-02-25
-Assignment: Module10 flask site
-Due Date:11-02-25
+Date: 11-09-25
+Assignment: Module11 Role Based Access Control
+Due Date:11-09-25
 About this project:
 Assumptions: NA
 All work below was performed by Isaac Jacques """
@@ -242,7 +242,7 @@ def addrec():
 def list_employees():
     db = get_db()
     rows = db.execute(
-        "SELECT name, age, phone, security_level, login_password FROM employees ORDER BY id ASC"
+        "SELECT id, name, age, phone, security_level, login_password FROM employees ORDER BY id ASC"
     ).fetchall()
     return render_template("list.html", rows=rows)
 
