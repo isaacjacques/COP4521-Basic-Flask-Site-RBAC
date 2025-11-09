@@ -10,7 +10,7 @@
 
 ## Using Python and the `flask.session`, `flask.flash`, and `os` libraries ....
 
-Starting from the website you created in [COP4521-Basic-Flask-Site](https://github.com/isaacjacques/COP4521-Basic-Flask-Site)
+Starting from the website last created [COP4521-Basic-Flask-Site](https://github.com/isaacjacques/COP4521-Basic-Flask-Site)
 
 ---
 
