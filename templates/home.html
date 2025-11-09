@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+  {% if session.get('user_id') %}
+    <h1>Welcome {{ session.get('username') }}</h1>
+
+    {% set lvl = session.get('security_level', 0) | int %}
+
+    {% if lvl in [1] %}
+      <p><a href="{{ url_for('enternew') }}">Add new Employee</a></p>
+    {% endif %}
+
+    <p><a href="{{ url_for('show_my_pay_raises') }}">Show my Pay Raises</a></p>
+
+    {% if lvl in [1, 2] %}
+      <p><a href="{{ url_for('list_employees') }}">List Employees</a></p>
+    {% endif %}
+
+    {% if lvl in [2] %}
+      <p><a href="{{ url_for('list_pay_raises') }}">List Pay Raises</a></p>
+    {% endif %}
+
+    <p><a href="{{ url_for('enter_raise') }}">Add a Pay Raise</a></p>
+    <p><a href="{{ url_for('logout') }}">Log out</a></p>
+  {% else %}
+    <h1>Login</h1>
+    <p><a href="{{ url_for('login') }}">Log in</a></p>
+  {% endif %}
+{% endblock %}

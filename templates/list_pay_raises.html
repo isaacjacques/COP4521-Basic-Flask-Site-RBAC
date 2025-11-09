@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>All Pay Raises (Level 2)</h1>
+  <table border="1">
+    <thead><tr><th>PayRaise Id</th><th>Emp Id</th><th>PayRaiseDate</th><th>RaiseAmt</th></tr></thead>
+    <tbody>
+      {% for r in rows %}
+        <tr>
+          <td>{{ r["pay_raise_id"] }}</td>
+          <td>{{ r["emp_id"] }}</td>
+          <td>{{ r["pay_raise_date"] }}</td>
+          <td>{{ "%.2f"|format(r["raise_amt"]) }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <p><a href="{{ url_for('home') }}">Go back to home page</a></p>
+{% endblock %}

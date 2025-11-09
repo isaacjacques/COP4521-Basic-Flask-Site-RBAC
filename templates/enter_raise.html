@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Pay Raise Information</h1>
+  <form method="post" action="{{ url_for('add_pay_raise') }}">
+    <p>PayRaiseDate<br><input id="pay_raise_date" name="pay_raise_date" type="date" required></p>
+    <p>Raise Amount<br><input id="raise_amt" name="raise_amt" type="number" step="0.01" min="0.01" required></p>
+    <p><button type="submit">submit</button></p>
+  </form>
+{% endblock %}
